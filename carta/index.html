@@ -1,0 +1,419 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Carta Los Dos Faros</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Big+Shoulders+Text:wght@600&family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+/* Carta de una columna pensada para el celular en la mesa: logo, tarifa de mesas en vivo, navegación fija por secciones, listas con guías de puntos. Un solo tema claro, por decisión de marca (sin fondo oscuro). */
+:root {
+  --hueso: #F4EFE6;
+  --papel: #FBF8F2;
+  --tinta: #0D1B24;
+  --tinta-suave: #4A5560;
+  --rojo: #E0313F;
+  --rojo-texto: #B8232F;
+  --ambar: #F5B83D;
+  --pano: #1F7A4D;
+  --linea: #DCD3C3;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --etiqueta: "Big Shoulders Text", "Arial Narrow", sans-serif;
+  --texto: Archivo, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--hueso);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 16px;
+  line-height: 1.45;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--hueso);
+}
+.envoltura {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--pano); }
+a:focus-visible, .chip:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; border-radius: 6px; }
+
+/* Encabezado */
+.cabecera { padding-block: 28px 20px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+.cabecera svg { width: min(300px, 82%); height: auto; }
+.datos { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 0; padding: 0; list-style: none; font-size: 14px; color: var(--tinta-suave); }
+.datos strong { color: var(--tinta); font-weight: 600; }
+.datos li { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.numero { user-select: all; font-variant-numeric: tabular-nums; }
+.copiar { min-height: 32px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--linea); background: var(--papel); color: var(--tinta); font: 600 12px var(--texto); letter-spacing: 0.04em; cursor: pointer; }
+.copiar:hover { border-color: var(--tinta); }
+.copiar:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; }
+.contactos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.contacto { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 12px; border-radius: 999px; background: var(--tinta); color: var(--papel); text-decoration: none; font-weight: 600; font-size: 15px; font-variant-numeric: tabular-nums; }
+.contacto:hover { background: var(--pano); }
+.contacto:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; }
+.contacto svg { width: 22px; height: 22px; flex: 0 0 auto; }
+.contacto small { font-size: 12px; font-weight: 500; opacity: 0.85; }
+.contacto-grupo { display: inline-flex; align-items: center; gap: 6px; }
+
+/* Navegación fija */
+.nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  background: var(--hueso);
+  border-bottom: 1px solid var(--linea);
+}
+.nav-carril {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-block: 10px;
+  scrollbar-width: none;
+}
+.nav-carril::-webkit-scrollbar { display: none; }
+.chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--etiqueta);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.chip:hover { border-color: var(--tinta); }
+
+/* Secciones */
+main { display: flex; flex-direction: column; gap: 40px; padding-block: 28px 32px; }
+section { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 72px); display: flex; flex-direction: column; gap: 14px; }
+h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+h2::after { content: ""; flex: 1; height: 3px; background: var(--tinta); border-radius: 2px; }
+h3 { margin: 0; font-size: 17px; font-weight: 700; }
+.nota { margin: 0; font-size: 14px; color: var(--tinta-suave); }
+.nota strong { color: var(--tinta); }
+
+/* Lista con guía de puntos */
+.lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.item { display: flex; align-items: baseline; gap: 8px; }
+.item-nombre { min-width: 0; display: flex; flex-direction: column; }
+.item-nombre small { font-size: 13px; color: var(--tinta-suave); }
+.guia { flex: 1; min-width: 16px; border-bottom: 2px dotted var(--linea); transform: translateY(-4px); }
+.precio { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Licores: marca con presentaciones */
+.marcas { display: flex; flex-direction: column; gap: 12px; }
+.marca { background: var(--papel); border: 1px solid var(--linea); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.presentaciones { margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+.pres { display: flex; flex-direction: column; gap: 2px; padding: 8px 10px; border-radius: 8px; background: var(--hueso); }
+.pres dt { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tinta-suave); }
+.pres dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* Billar */
+.ahora {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 12px 14px; border-radius: 12px; background: var(--tinta); color: var(--papel);
+}
+.ahora .punto { width: 10px; height: 10px; border-radius: 50%; background: var(--ambar); flex: 0 0 auto; }
+.ahora p { margin: 0; font-size: 15px; }
+.ahora strong { color: var(--ambar); }
+.tabla-caja { overflow-x: auto; border: 1px solid var(--linea); border-radius: 12px; background: var(--papel); }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--linea); }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+thead th { font-family: var(--etiqueta); font-weight: 600; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tinta-suave); vertical-align: bottom; }
+tbody th { font-weight: 600; }
+tbody th small { display: block; font-weight: 400; font-size: 13px; color: var(--tinta-suave); }
+td { font-weight: 700; white-space: nowrap; }
+td.activa, th.activa { background: var(--ambar); color: var(--tinta); }
+.horarios { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.horario { padding: 12px 14px; border-radius: 12px; border: 1px solid var(--linea); display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.horario b { font-family: var(--etiqueta); font-weight: 600; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; }
+.horario span { color: var(--tinta-suave); }
+.horario.hoy { border-color: var(--tinta); border-width: 2px; padding: 11px 13px; }
+
+/* Pie */
+.pie { border-top: 3px solid var(--tinta); padding-block: 20px 36px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: var(--tinta-suave); }
+.pie .legal { font-weight: 600; color: var(--tinta); }
+.pie p { margin: 0; }
+</style>
+
+<div class="envoltura">
+  <header class="cabecera">
+    <svg viewBox="0 0 520 400" role="img" aria-label="Los Dos Faros, Club de Billar y Bar">
+      <ellipse cx="260" cy="230" rx="96" ry="20" fill="#1F7A4D"></ellipse>
+      <polygon points="96,101 96,113 312,240 236,160" fill="#F5B83D" opacity="0.5"></polygon>
+      <polygon points="424,101 424,113 208,240 284,160" fill="#F5B83D" opacity="0.5"></polygon>
+      <rect x="30" y="279" width="460" height="4" rx="2" fill="#0D1B24"></rect>
+      <g transform="translate(40 40)">
+        <polygon points="30,90 70,90 72.4,120 27.6,120" fill="#E0313F"></polygon>
+        <polygon points="27.6,120 72.4,120 74.8,150 25.2,150" fill="#FFFFFF"></polygon>
+        <polygon points="25.2,150 74.8,150 77.2,180 22.8,180" fill="#E0313F"></polygon>
+        <polygon points="22.8,180 77.2,180 79.6,210 20.4,210" fill="#FFFFFF"></polygon>
+        <polygon points="20.4,210 79.6,210 82,240 18,240" fill="#E0313F"></polygon>
+        <polygon points="30,90 70,90 82,240 18,240" fill="none" stroke="#0D1B24" stroke-width="3" stroke-linejoin="round"></polygon>
+        <path d="M42,240 V226 a8,8 0 0 1 16,0 V240 Z" fill="#0D1B24"></path>
+        <rect x="35" y="54" width="30" height="28" fill="#F5B83D" stroke="#0D1B24" stroke-width="3"></rect>
+        <rect x="22" y="82" width="56" height="9" rx="2" fill="#0D1B24"></rect>
+        <polygon points="30,54 70,54 50,30" fill="#E0313F" stroke="#0D1B24" stroke-width="3" stroke-linejoin="round"></polygon>
+        <circle cx="50" cy="26" r="4" fill="#0D1B24"></circle>
+      </g>
+      <g transform="translate(380 40)">
+        <polygon points="30,90 70,90 72.4,120 27.6,120" fill="#E0313F"></polygon>
+        <polygon points="27.6,120 72.4,120 74.8,150 25.2,150" fill="#FFFFFF"></polygon>
+        <polygon points="25.2,150 74.8,150 77.2,180 22.8,180" fill="#E0313F"></polygon>
+        <polygon points="22.8,180 77.2,180 79.6,210 20.4,210" fill="#FFFFFF"></polygon>
+        <polygon points="20.4,210 79.6,210 82,240 18,240" fill="#E0313F"></polygon>
+        <polygon points="30,90 70,90 82,240 18,240" fill="none" stroke="#0D1B24" stroke-width="3" stroke-linejoin="round"></polygon>
+        <path d="M42,240 V226 a8,8 0 0 1 16,0 V240 Z" fill="#0D1B24"></path>
+        <rect x="35" y="54" width="30" height="28" fill="#F5B83D" stroke="#0D1B24" stroke-width="3"></rect>
+        <rect x="22" y="82" width="56" height="9" rx="2" fill="#0D1B24"></rect>
+        <polygon points="30,54 70,54 50,30" fill="#E0313F" stroke="#0D1B24" stroke-width="3" stroke-linejoin="round"></polygon>
+        <circle cx="50" cy="26" r="4" fill="#0D1B24"></circle>
+      </g>
+      <circle cx="226" cy="212" r="17" fill="#E0313F" stroke="#0D1B24" stroke-width="2"></circle>
+      <circle cx="294" cy="212" r="17" fill="#F5B83D" stroke="#0D1B24" stroke-width="2"></circle>
+      <circle cx="260" cy="208" r="19" fill="#FFFFFF" stroke="#0D1B24" stroke-width="2"></circle>
+      <text x="260" y="340" text-anchor="middle" font-family="'Big Shoulders Display', 'Arial Narrow', sans-serif" font-weight="800" font-size="66" letter-spacing="2" fill="#0D1B24">LOS DOS FAROS</text>
+      <text x="260" y="374" text-anchor="middle" font-family="'Big Shoulders Text', 'Arial Narrow', sans-serif" font-weight="600" font-size="17" letter-spacing="8" fill="#1F7A4D">CLUB DE BILLAR · BAR</text>
+    </svg>
+    <ul class="datos">
+      <li><strong>Todos los días</strong> · 9 a.m. a 2 a.m.</li>
+      <li><strong>12 mesas</strong> · 9 tres bandas, 2 pool, 1 libre</li>
+      <li><a href="https://maps.app.goo.gl/GejKfJ6eBhgtqiiPA" target="_blank" rel="noopener"><strong>Cómo llegar</strong></a></li>
+    </ul>
+    <div class="contactos">
+      <span class="contacto-grupo">
+        <a class="contacto" href="https://wa.me/573193920631" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp al +57 319 392 0631">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"></path><circle cx="8.5" cy="11" r="0.6" fill="currentColor"></circle><circle cx="12" cy="11" r="0.6" fill="currentColor"></circle><circle cx="15.5" cy="11" r="0.6" fill="currentColor"></circle></svg>
+          <span style="display:flex;flex-direction:column;line-height:1.1;text-align:left"><small>WhatsApp</small><span class="numero" id="numero-cel">+57 319 392 0631</span></span>
+        </a>
+        <button class="copiar" type="button" id="copiar-cel">Copiar</button>
+      </span>
+      <a class="contacto" href="https://www.instagram.com/losdosfaros/" target="_blank" rel="noopener" aria-label="Ver Instagram @losdosfaros">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg>
+        <span style="display:flex;flex-direction:column;line-height:1.1;text-align:left"><small>Instagram</small><span>@losdosfaros</span></span>
+      </a>
+    </div>
+  </header>
+</div>
+
+<nav class="nav" aria-label="Secciones de la carta">
+  <div class="envoltura nav-carril" id="nav"></div>
+</nav>
+
+<div class="envoltura">
+  <main id="carta">
+    <section id="billar" aria-labelledby="t-billar">
+      <h2 id="t-billar">Mesas</h2>
+      <div class="ahora" id="ahora" aria-live="polite">
+        <span class="punto" aria-hidden="true"></span>
+        <p id="ahora-texto">Valores por hora de mesa.</p>
+      </div>
+      <div class="tabla-caja">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Mesa</th>
+              <th scope="col" data-tarifa="dia">De día</th>
+              <th scope="col" data-tarifa="noche">Tarde y noche</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-mesas"></tbody>
+        </table>
+      </div>
+      <div class="horarios" id="horarios"></div>
+      <p class="nota"><strong>Pagas solo lo que juegas:</strong> el tiempo se cobra por minuto sobre el valor de la hora. Por ejemplo, 30 minutos de tres bandas en la noche cuestan $8.250.</p>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p class="legal">El exceso de alcohol es perjudicial para la salud. Ley 30 de 1986.</p>
+    <p class="legal">Prohíbase el expendio de bebidas embriagantes a menores de edad. Ley 124 de 1994.</p>
+    <p>Precios en pesos colombianos. WhatsApp: +57 319 392 0631 · Instagram: @losdosfaros · <a href="https://maps.app.goo.gl/GejKfJ6eBhgtqiiPA" target="_blank" rel="noopener">Ver ubicación en Google Maps</a></p>
+  </footer>
+</div>
+
+<script>
+const plata = (n) => "$" + n.toLocaleString("es-CO");
+
+const MESAS = [
+  { nombre: "Tres bandas", cuantas: "9 mesas", dia: 11000, noche: 16500 },
+  { nombre: "Pool", cuantas: "2 mesas", dia: 9000, noche: 14500 },
+  { nombre: "Libre", cuantas: "1 mesa", dia: 7500, noche: 11500 }
+];
+
+const HORARIOS = [
+  { id: "semana", dias: "Lunes a jueves", dia: "9 a.m. a 3 p.m.", noche: "3 p.m. al cierre" },
+  { id: "finde", dias: "Viernes y sábado", dia: "9 a.m. a 2 p.m.", noche: "2 p.m. al cierre" },
+  { id: "domingo", dias: "Domingos y festivos", dia: "Todo el día", noche: null }
+];
+
+const SECCIONES = [
+  { id: "cervezas", titulo: "Cervezas", tipo: "lista", items: [
+    ["Costeñita", 4000], ["Águila", 6000], ["Águila Light", 6000], ["Pilsen", 6000], ["Póker", 6000],
+    ["Club Colombia", 7000], ["Coronita", 7000], ["Corona", 10000], ["Heineken", 10000], ["Stella Artois", 10000],
+    ["Cola y Pola", 5000]
+  ], nota: "Michelada: suma $2.000 a tu cerveza." },
+  { id: "aguardientes", titulo: "Aguardientes", tipo: "marcas", marcas: [
+    ["Aguardiente Rojo", [["Trago", 4500], ["¼", 31000], ["½", 55000], ["Litro tetra", 105000], ["Litro vidrio", 110000]]],
+    ["Aguardiente Light", [["Trago", 5000], ["¼", 33000], ["½", 60000], ["Litro tetra", 110000], ["Litro vidrio", 120000]]],
+    ["Aguardiente Verde", [["Trago", 4500], ["¼", 30000], ["½", 55000], ["Litro tetra", 105000]]],
+    ["Aguardiente Amarillo de Manzanares", [["Trago", 5000], ["½", 60000], ["Botella", 110000]]],
+    ["Aguardiente Real", [["Botella", 90000]]]
+  ]},
+  { id: "rones", titulo: "Rones", tipo: "marcas", marcas: [
+    ["Ron Caldas 3 años", [["Trago", 5500], ["¼", 35000], ["½", 65000], ["Botella", 110000]]],
+    ["Ron Caldas Esencial", [["½", 55000], ["Botella", 100000]]],
+    ["Ron Caldas 5 años", [["Trago", 6500], ["½", 75000], ["Botella", 130000]]],
+    ["Ron Caldas 8 años", [["Trago", 7500], ["½", 90000], ["Botella", 175000]]],
+    ["Ron Caldas 15 años", [["Botella", 220000]]],
+    ["Ron Medellín 3 años", [["Trago", 4500], ["¼", 31000], ["½", 55000], ["Litro", 110000]]],
+    ["Ron Medellín Dorado", [["½", 55000]]],
+    ["Ron Medellín 5 años", [["Trago", 5000], ["½", 60000], ["Botella", 120000]]],
+    ["Ron Medellín 8 años", [["Trago", 7000], ["½", 80000], ["Botella", 155000]]]
+  ]},
+  { id: "licores", titulo: "Whisky y otros", tipo: "marcas", marcas: [
+    ["Whisky Old Parr", [["Trago", 11000], ["¼", 60000], ["½", 180000], ["Botella", 230000]]],
+    ["Whisky Buchanan's 12 años", [["½", 180000], ["Botella", 260000]]],
+    ["Tequila", [["Trago", 5000], ["½", 100000], ["Botella", 170000]]],
+    ["Brandy", [["Trago", 5000], ["½", 55000], ["Botella", 100000]]],
+    ["Baileys", [["Trago", 6500], ["Botella", 130000]]]
+  ], nota: "Descorche de tequila, whisky y otras botellas: $90.000." },
+  { id: "bebidas", titulo: "Sin alcohol", tipo: "grupos", grupos: [
+    ["Gaseosas", [
+      ["Gaseosa", 4500, "Colombiana, manzana, uva, naranja, piña, tamarindo, soda o Seven Up"],
+      ["Malta", 4500], ["Tutti Frutti", 4000], ["Coca-Cola", 5000], ["Coca-Cola Zero", 5000]
+    ]],
+    ["Aguas y refrescos", [
+      ["Agua 300 ml", 2500], ["Agua 600 ml", 3500], ["Limonada", 2500], ["Mr. Tea", 4000], ["H2O", 5000], ["Saviloe", 5000]
+    ]],
+    ["Hidratantes y energizantes", [
+      ["Vive 100", 5000], ["Gatorade", 6000], ["Electrolit", 12000], ["Red Bull", 12000]
+    ]]
+  ]},
+  { id: "cafe", titulo: "Café y aromáticas", tipo: "lista", items: [
+    ["Tinto", 1800], ["Aromática", 1800], ["Perico", 2200]
+  ]},
+  { id: "picar", titulo: "Para picar", tipo: "lista", items: [
+    ["Salchichas", 7000], ["Papitas o rosquitas", 5000], ["Maní con arándanos", 4000], ["Maní", 3000],
+    ["Pastel de arequipe", 4000], ["Pastel de guayaba", 4000], ["Chicle", 500]
+  ]},
+  { id: "extras", titulo: "Adiciones y extras", tipo: "lista", items: [
+    ["Michelada", 2000, "Adición para cerveza"], ["Limón", 2500, "Adición"], ["Guantes de billar", 8000], ["Encendedor", 2500], ["Alka-Seltzer", 2000]
+  ]}
+];
+
+function itemHTML([nombre, precio, detalle]) {
+  return `<li class="item"><span class="item-nombre">${nombre}${detalle ? `<small>${detalle}</small>` : ""}</span><span class="guia" aria-hidden="true"></span><span class="precio">${plata(precio)}</span></li>`;
+}
+
+function seccionHTML(s) {
+  let cuerpo = "";
+  if (s.tipo === "lista") {
+    cuerpo = `<ul class="lista">${s.items.map(itemHTML).join("")}</ul>`;
+  } else if (s.tipo === "marcas") {
+    cuerpo = `<div class="marcas">${s.marcas.map(([marca, pres]) => `
+      <article class="marca"><h3>${marca}</h3>
+        <dl class="presentaciones">${pres.map(([p, v]) => `<div class="pres"><dt>${p}</dt><dd>${plata(v)}</dd></div>`).join("")}</dl>
+      </article>`).join("")}</div>`;
+  } else if (s.tipo === "grupos") {
+    cuerpo = s.grupos.map(([g, items]) => `<div style="display:flex;flex-direction:column;gap:10px"><h3>${g}</h3><ul class="lista">${items.map(itemHTML).join("")}</ul></div>`).join("");
+  }
+  const nota = s.nota ? `<p class="nota">${s.nota}</p>` : "";
+  return `<section id="${s.id}" aria-labelledby="t-${s.id}"><h2 id="t-${s.id}">${s.titulo}</h2>${cuerpo}${nota}</section>`;
+}
+
+const carta = document.getElementById("carta");
+carta.insertAdjacentHTML("beforeend", SECCIONES.map(seccionHTML).join(""));
+
+document.getElementById("nav").innerHTML =
+  [{ id: "billar", titulo: "Mesas" }, ...SECCIONES].map((s) => `<a class="chip" href="#${s.id}">${s.titulo}</a>`).join("");
+
+document.getElementById("horarios").innerHTML = HORARIOS.map((h) => `
+  <div class="horario" data-horario="${h.id}"><b>${h.dias}</b>
+    <span>De día: ${h.dia}</span>${h.noche ? `<span>Tarde y noche: ${h.noche}</span>` : `<span>Siempre tarifa de día</span>`}
+  </div>`).join("");
+
+// Tarifa vigente según la hora de Bogotá. Entre medianoche y las 2 a.m. sigue la noche del día anterior.
+function tarifaActual() {
+  const partes = new Intl.DateTimeFormat("en-US", { timeZone: "America/Bogota", weekday: "short", hour: "numeric", hourCycle: "h23" }).formatToParts(new Date());
+  const dias = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  let dia = dias[partes.find((p) => p.type === "weekday").value];
+  const hora = parseInt(partes.find((p) => p.type === "hour").value, 10);
+  if (hora >= 2 && hora < 9) return { estado: "cerrado" };
+  if (hora < 2) {
+    dia = (dia + 6) % 7;
+    return { estado: dia === 0 ? "dia" : "noche", dia };
+  }
+  if (dia === 0) return { estado: "dia", dia };
+  const corte = dia === 5 || dia === 6 ? 14 : 15;
+  return { estado: hora < corte ? "dia" : "noche", dia };
+}
+
+function pintarTarifa() {
+  const t = tarifaActual();
+  const texto = document.getElementById("ahora-texto");
+  if (t.estado === "cerrado") {
+    texto.innerHTML = "Ahora estamos cerrados. Abrimos todos los días a las <strong>9 a.m.</strong>";
+  } else {
+    const nombre = t.estado === "dia" ? "de día" : "de tarde y noche";
+    texto.innerHTML = `Ahora rige la tarifa <strong>${nombre}</strong>. En festivos aplica la tarifa de día todo el día.`;
+  }
+  document.getElementById("tabla-mesas").innerHTML = MESAS.map((m) => `
+    <tr><th scope="row">${m.nombre}<small>${m.cuantas}</small></th>
+      <td class="${t.estado === "dia" ? "activa" : ""}">${plata(m.dia)}</td>
+      <td class="${t.estado === "noche" ? "activa" : ""}">${plata(m.noche)}</td></tr>`).join("");
+  document.querySelectorAll("thead th[data-tarifa]").forEach((th) => th.classList.toggle("activa", th.dataset.tarifa === t.estado));
+  const grupo = t.dia === undefined ? null : t.dia === 0 ? "domingo" : t.dia >= 5 ? "finde" : "semana";
+  document.querySelectorAll(".horario").forEach((h) => h.classList.toggle("hoy", h.dataset.horario === grupo));
+}
+pintarTarifa();
+setInterval(pintarTarifa, 60000);
+
+document.getElementById("copiar-cel").addEventListener("click", (e) => {
+  const boton = e.currentTarget;
+  const listo = () => { boton.textContent = "Copiado"; setTimeout(() => { boton.textContent = "Copiar"; }, 2000); };
+  const seleccionar = () => {
+    const r = document.createRange();
+    r.selectNodeContents(document.getElementById("numero-cel"));
+    const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    boton.textContent = "Seleccionado";
+    setTimeout(() => { boton.textContent = "Copiar"; }, 2000);
+  };
+  try {
+    navigator.clipboard.writeText("+573193920631").then(listo, seleccionar);
+  } catch (err) { seleccionar(); }
+});
+</script>
+
+</body></html>

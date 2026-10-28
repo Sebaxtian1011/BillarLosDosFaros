@@ -1,0 +1,60 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Main.dc.html": {
+      "h": 820,
+      "title": "Logo actual",
+      "w": 640,
+      "x": 0,
+      "y": 0
+    },
+    "PropuestaA.dc.html": {
+      "h": 820,
+      "title": "Propuesta A · Emblema de club",
+      "w": 1280,
+      "x": 720,
+      "y": 0
+    },
+    "PropuestaB.dc.html": {
+      "h": 820,
+      "title": "Propuesta B · Faros con bola",
+      "w": 1280,
+      "x": 2080,
+      "y": 0
+    },
+    "PropuestaC.dc.html": {
+      "h": 820,
+      "title": "Propuesta C · Dos luces sobre el paño",
+      "w": 1280,
+      "x": 3440,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-28T01:10:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "titulo": {
+      "kind": "title1",
+      "maxW": 4720,
+      "text": "Los Dos Faros · Renovación de logo",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "PropuestaA.dc.html",
+    "PropuestaB.dc.html",
+    "PropuestaC.dc.html"
+  ],
+  "pages": [],
+  "title": "Los Dos Faros — Renovación de logo"
+}
