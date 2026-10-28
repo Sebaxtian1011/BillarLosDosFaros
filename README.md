@@ -6,7 +6,7 @@ Branding, página web, carta digital y material de mesa del Club de Billar Los D
 
 | Carpeta | Contenido | Estado |
 |---|---|---|
-| `web/` | Página web de una sola página (`index.html`) con sus fotos en `img/`. | v1 para revisión |
+| raíz | Página web de una sola página (`index.html`) con sus fotos en `img/`. | v1 para revisión |
 | `carta/` | Carta digital para celular (`index.html`), pensada para abrirse desde el QR de las mesas. Tarifa vigente según la hora de Bogotá. | Aprobada (27-oct-2026) |
 | `marca/logo/svg/` | Logo aprobado (Propuesta C · "Dos luces sobre el paño") en SVG: principal a color, una tinta, ícono de perfil e ícono pequeño. | Aprobado (27-oct-2026) |
 | `marca/logo/` | Tablero de diseño con el logo original y las tres propuestas (A, B, C). Archivos `.dc.html` del editor de diseño de Claude; `assets/logo-original.png` es el logo anterior. | Referencia |
@@ -15,7 +15,7 @@ Branding, página web, carta digital y material de mesa del Club de Billar Los D
 
 ## Ver localmente
 
-`web/index.html` y `carta/index.html` se abren directo en el navegador. Las fuentes (Big Shoulders Display y Archivo) se cargan desde Google Fonts, así que se necesita internet para verlas bien.
+`index.html` y `carta/index.html` se abren directo en el navegador. Las fuentes (Big Shoulders Display y Archivo) se cargan desde Google Fonts, así que se necesita internet para verlas bien.
 
 Los archivos `.dc.html` de `marca/logo/` y `qr/` son tableros del editor de diseño de Claude y no se ven bien fuera de él; para uso real están los SVG de `marca/logo/svg/`.
 
@@ -26,7 +26,7 @@ Los archivos `.dc.html` de `marca/logo/` y `qr/` son tableros del editor de dise
 
 ## Publicación
 
-Recomendado: dominio propio (por ejemplo losdosfaros.co) con la web en `/` y la carta en `/carta`, para que el QR impreso no cambie nunca. Este repositorio se puede publicar tal cual con GitHub Pages.
+Publicado con GitHub Pages: web en https://sebaxtian1011.github.io/BillarLosDosFaros/ y carta en https://sebaxtian1011.github.io/BillarLosDosFaros/carta/. A futuro se recomienda un dominio propio (por ejemplo losdosfaros.co) para que el QR impreso no dependa de GitHub.
 
 ## Pendiente
 
