@@ -10,7 +10,7 @@ Branding, página web, carta digital y material de mesa del Club de Billar Los D
 | `carta/` | Carta digital para celular (`index.html`), pensada para abrirse desde el QR de las mesas. Tarifa vigente según la hora de Bogotá. | Aprobada (27-oct-2026) |
 | `marca/logo/svg/` | Logo aprobado (Propuesta C · "Dos luces sobre el paño") en SVG: principal a color, una tinta, ícono de perfil e ícono pequeño. | Aprobado (27-oct-2026) |
 | `marca/logo/` | Tablero de diseño con el logo original y las tres propuestas (A, B, C). Archivos `.dc.html` del editor de diseño de Claude; `assets/logo-original.png` es el logo anterior. | Referencia |
-| `qr/` | Cartel A5 de mesa "Escanea y mira la carta": `cartel-a5.html` se abre en el navegador y se imprime en A5 al 100 %. El QR (`assets/qr-carta.svg` y `.png`) apunta a la carta publicada en GitHub Pages. `Main.dc.html` es la versión del editor de diseño. | Listo para imprimir |
+| `qr/` | Material de mesa con el QR hacia la carta publicada en GitHub Pages. `cartel-a5.html`: cartel A5 para imprimir desde el navegador. `sticker/sticker-menu.html` y `.png` (5×6 cm, 1512×1816 px): sticker individual con el QR, el logo y el texto "Menú" para pegar en las mesas. `sticker/hoja-12-stickers-a4.pdf`: hoja A4 con 12 stickers listos para recortar. | Listo para imprimir |
 | `docs/` | Decisiones de marca, catálogo de productos y precios, fotos pendientes y contexto del negocio. | Vigente |
 
 ## Ver localmente
